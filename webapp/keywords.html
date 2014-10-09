@@ -1,0 +1,198 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-15"/>
+     <script language="JavaScript" type="text/javascript">
+function addKeywordText(keyword) {
+    var str = keyword;
+    str = str.replace(/<\/?.*?\/?>/g, String.fromCharCode(13));
+    opener.targetElement.value = opener.targetElement.value + " " + keyword;
+    window.close();
+}
+</script>
+<?php
+  include("phpres2/incSiteHead.php");
+?>
+</head>
+<body>
+<div align=center class="page-div-center">
+<!-- Hauptseite-->
+<div class="pageContent pageContentPopup" id="pageContent">
+<div class="box box-ue">
+    <div class="boxline boxline-ue" id="ue_sonne">Suchworte für die Volltextsuche</div>
+    <div class="boxline ">Einfach raufklicken (dann werden die Worte in das Suchfeld übernommen) und wenn du fertig bist, <a href="#" onclick="javascript:window.close();">dass Fenster wieder schließen</a>. Fröhliche Suche :-)</br>
+<table>
+      <tr  >
+        <td width="100"  align="LEFT"  valign="TOP">Aktivität</td>
+        <td width="500"  align="LEFT"  valign="TOP"><a href="#" class="a-news" onclick="javascript:addKeywordText('Baden');return false;">Baden</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Boofen');return false;">Boofen</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Bootfahren');return false;">Bootfahren</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Campen');return false;">Campen</a>
+
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Fliegen');return false;">Fliegen</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Gletscherbegehung');return false;">Gletscherbegehung</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Kanu');return false;">Kanu</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Klettern');return false;">Klettern</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Klettersteig');return false;">Klettersteig</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Radfahren');return false;">Radfahren</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Schneeschuhwandern');return false;">Schneeschuhwandern</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Skaten');return false;">Skaten</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Wandern');return false;">Wandern</a>
+</td>
+    </tr>
+      <tr  >
+        <td width="100"  align="LEFT"  valign="TOP">Binnengewässer</td>
+        <td width="500"  align="LEFT"  valign="TOP"><a href="#" class="a-news" onclick="javascript:addKeywordText('Aue');return false;">Aue</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Bach');return false;">Bach</a>
+
+<a href="#" class="a-news" onclick="javascript:addKeywordText('Fluss');return false;">Fluss</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Moor');return false;">Moor</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('See');return false;">See</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Seenlandschaft');return false;">Seenlandschaft</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Teich');return false;">Teich</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Wasserfall');return false;">Wasserfall</a>
+</td>
+    </tr>
+      <tr  >
+        <td width="100"  align="LEFT"  valign="TOP">Dinge</td>
+        <td width="500"  align="LEFT"  valign="TOP"><a href="#" class="a-news" onclick="javascript:addKeywordText('Menschen');return false;">Menschen</a>
+
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Technik');return false;">Technik</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Tiere');return false;">Tiere</a>
+</td>
+    </tr>
+      <tr  >
+        <td width="100"  align="LEFT"  valign="TOP">Gebirge</td>
+        <td width="500"  align="LEFT"  valign="TOP"><a href="#" class="a-news" onclick="javascript:addKeywordText('Berge');return false;">Berge</a>
+  <a href="#" class="a-news" onclick="javascript:addKeywordText('Felsen');return false;">Felsen</a>
+<!-- <a href="#" class="a-news" onclick="javascript:addKeywordText('Felswand');return false;">Felswand</a>-->
+  <a href="#" class="a-news" onclick="javascript:addKeywordText('Gletscherschau');return false;">Gletscherschau</a>
+
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Hochgebirge');return false;">Hochgebirge</a>
+  <a href="#" class="a-news" onclick="javascript:addKeywordText('Höhle');return false;">Höhle</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Mittelgebirge');return false;">Mittelgebirge</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Schlucht');return false;">Schlucht</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Tal');return false;">Tal</a>
+</td>
+    </tr>
+      <tr  >
+        <td width="100"  align="LEFT"  valign="TOP">Kultur</td>
+        <td width="500"  align="LEFT"  valign="TOP">
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Denkmal');return false;">Denkmal</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Geschichte');return false;">Geschichte</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Kunst');return false;">Kunst</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Museum');return false;">Museum</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Museumsbesuch');return false;">Museumsbesuch</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Stadtbesichtigung');return false;">Stadtbesichtigung</a>
+</td>
+</tr>
+
+      <tr  >
+        <td width="100"  align="LEFT"  valign="TOP">Meer</td>
+        <td width="500"  align="LEFT"  valign="TOP"><a href="#" class="a-news" onclick="javascript:addKeywordText('Meer');return false;">Meer</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Ozean');return false;">Ozean</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Sandstrand');return false;">Sandstrand</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Steinstrand');return false;">Steinstrand</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Steilküste');return false;">Steilküste</a>
+</td>
+    </tr>
+      <tr  >
+        <td width="100"  align="LEFT"  valign="TOP">Landschaft</td>
+        <td width="500"  align="LEFT"  valign="TOP"><a href="#" class="a-news" onclick="javascript:addKeywordText('Kulturlandschaft');return false;">Kulturlandschaft</a>
+
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Landschaft');return false;">Landschaft</a>
+<!-- <a href="#" class="a-news" onclick="javascript:addKeywordText('Natur');return false;">Natur</a>-->
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Dorf');return false;">Dorf</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Stadt');return false;">Stadt</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Naturlandschaft');return false;">Naturlandschaft</a>
+ </td>
+
+    </tr>
+      <tr  >
+        <td width="100"  align="LEFT"  valign="TOP">Jahreszeit</td>
+        <td width="500"  align="LEFT"  valign="TOP"><a href="#" class="a-news" onclick="javascript:addKeywordText('Frühling');return false;">Frühling</a>
+
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Herbst');return false;">Herbst</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Sommer');return false;">Sommer</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Winter');return false;">Winter</a>
+</td>
+    </tr>
+      <tr  >
+        <td width="100"  align="LEFT"  valign="TOP">Sonne/Mond</td>
+        <td width="500"  align="LEFT"  valign="TOP"><a href="#" class="a-news" onclick="javascript:addKeywordText('Mond');return false;">Mond</a>
+
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Sonnenaufgang');return false;">Sonnenaufgang</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Sonnenuntergang');return false;">Sonnenuntergang</a>
+</td>
+    </tr>
+      <tr  >
+        <td width="100"  align="LEFT"  valign="TOP">Stadt</td>
+        <td width="500"  align="LEFT"  valign="TOP">
+<a href="#" class="a-news" onclick="javascript:addKeywordText('Architektur');return false;">Architektur</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Burg');return false;">Burg</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Dom');return false;">Dom</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Kirche');return false;">Kirche</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Park');return false;">Park</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Schloss');return false;">Schloss</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Zoo');return false;">Zoo</a>
+</td>
+    </tr>
+      <tr  >
+        <td width="100"  align="LEFT"  valign="TOP">Tour</td>
+        <td width="500"  align="LEFT"  valign="TOP"><a href="#" class="a-news" onclick="javascript:addKeywordText('Besichtigung');return false;">Besichtigung</a>
+
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Gassi');return false;">Gassi</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Hochtour');return false;">Hochtour</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Spaziergang');return false;">Spaziergang</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Wanderung');return false;">Wanderung</a>
+</td>
+    </tr>
+      <tr  >
+
+        <td width="100"  align="LEFT"  valign="TOP">Tourdauer</td>
+        <td width="500"  align="LEFT"  valign="TOP"> <a href="#" class="a-news" onclick="javascript:addKeywordText('Kurztour');return false;">Kurztour</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Mehrtagestour');return false;">Mehrtagestour</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Tagestour');return false;">Tagestour</a>
+</td>
+    </tr>
+         <tr  >
+        <td width="100"  align="LEFT"  valign="TOP">Wald</td>
+        <td width="500"  align="LEFT"  valign="TOP"><a href="#" class="a-news" onclick="javascript:addKeywordText('Bergwald');return false;">Bergwald</a>
+<!-- <a href="#" class="a-news" onclick="javascript:addKeywordText('Laubwald');return false;">Laubwald</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Nadelwald');return false;">Nadelwald</a>
+ -->
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Strandwald');return false;">Strandwald</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Wald');return false;">Wald</a>
+</td>
+    </tr>
+      <tr  >
+        <td width="100"  align="LEFT"  valign="TOP">Wetter</td>
+        <td width="500"  align="LEFT"  valign="TOP"><a href="#" class="a-news" onclick="javascript:addKeywordText('bedeckt');return false;">bedeckt</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Eis');return false;">Eis</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('heiter');return false;">heiter</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Regen');return false;">Regen</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Schnee');return false;">Schnee</a>
+
+<!-- <a href="#" class="a-news" onclick="javascript:addKeywordText('Sonne');return false;">Sonne</a>-->
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('sonnig');return false;">sonnig</a>
+</td>
+    </tr>
+      <tr  >
+        <td width="100"  align="LEFT"  valign="TOP">Wiese</td>
+        <td width="500"  align="LEFT"  valign="TOP"><a href="#" class="a-news" onclick="javascript:addKeywordText('Blumen');return false;">Blumen</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Feld');return false;">Feld</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Heide');return false;">Heide</a>
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Steppe');return false;">Steppe</a>
+<!-- <a href="#" class="a-news" onclick="javascript:addKeywordText('Weide');return false;">Weide</a>-->
+
+ <a href="#" class="a-news" onclick="javascript:addKeywordText('Wiese');return false;">Wiese</a>
+</td>
+    </tr>
+</table>
+<br>&nbsp;<br>
+    <a href="#" onclick="javascript:window.close();">[Fenster schließen]</a>
+
+</div>
+</div>
+</div>
+</div>
+</body>

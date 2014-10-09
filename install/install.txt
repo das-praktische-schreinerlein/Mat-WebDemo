@@ -1,0 +1,72 @@
+#########################
+#
+# Install-MatWeb-Demo
+#
+#########################  
+    
+#########################
+#### Linux/Unix-Standard-Server
+#########################
+
+# Entpacken
+cd /srv/www/vhosts/ 
+unzip matweb_demo-current.zip 
+
+# Datenbank konfigurieren
+cd /srv/www/vhosts/matweb_demo/install
+mysql -u root -p
+
+create database mat_demodb CHARACTER SET latin1;
+GRANT ALL PRIVILEGES ON mat_demodb.* TO mat_portaluser@localhost IDENTIFIED BY 'FIXME_change_on_install';
+flush privileges;
+exit;
+
+# Tabellen importieren
+mysql -u mat_portaluser -p mat_demodb
+
+source import_RATES.sql;
+source import_IMAGE.sql;
+exit;
+
+# Apache konfigurieren
+cd /srv/www/vhosts/matweb_demo/install
+cp inc_matweb_demo.conf /etc/apache2/conf.d/
+
+#########################
+#### Windows
+#########################
+
+# Entpacken
+cd $CHANGE_TO_YOUR_WEBBASE$
+unzip matweb_demo-current.zip 
+
+# datenbabnk konfigurieren
+cd $CHANGE_TO_YOUR_WEBBASE$\matweb_demo\install\
+mysql -u root -p
+
+create database mat_demodb CHARACTER SET latin1;
+GRANT ALL PRIVILEGES ON mat_demodb.* TO mat_portaluser@localhost IDENTIFIED BY 'FIXME_change_on_install';
+flush privileges;
+exit;
+
+# Tabellen importieren
+mysql -u mat_portaluser -p mat_demodb
+source import_RATES.sql;
+source import_IMAGE.sql;
+exit;
+
+# Apache konfigurieren
+# folgende Zeilen in Apache-Config-Verzeichnis apache/conf/inc_matweb_demo.conf
+alias /matweb_demo/ "$CHANGE_TO_YOUR_WEBBASE$/matweb_demo/webapp/"
+alias /mobile/matweb_demo/ "$CHANGE_TO_YOUR_WEBBASE$/matweb_demo/webapp/"
+alias /smartphone/matweb_demo/ "$CHANGE_TO_YOUR_WEBBASE$/matweb_demo/webapp/"
+<Directory "$CHANGE_TO_YOUR_WEBBASE$/matweb_demo/webapp">
+    Options Indexes FollowSymLinks Includes ExecCGI
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+    
+    php_admin_flag engine on
+    php_admin_flag safe_mode on
+    php_admin_value open_basedir "$CHANGE_TO_YOUR_WEBBASE$/matweb_demo/webapp/:/tmp"
+</Directory>

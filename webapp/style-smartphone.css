@@ -1,0 +1,229 @@
+/**
+ * <h4>FeatureDomain:</h4>
+ *     WebApp
+ *
+ * <h4>FeatureDescription:</h4>
+ *     Teil der MatWeb-Framework Demo-Anwendung<br>
+ *     Differenz-Styles fuer die Smartphone-Version
+ * 
+ * @author Michael Schreiner <ich@michas-ausflugstipps.de>
+ * @category MatWeb-WebAppFramework-Demo
+ * @copyright Copyright (c) 2013, Michael Schreiner
+ * @license http://mozilla.org/MPL/2.0/ Mozilla Public License 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+
+/*
+########################
+## Top-Menue
+########################
+*/
+.menueTop {
+    clear: both;
+    text-align: center;
+    padding-bottom: 4px;
+    float: left;
+    display: inline; /* fix IE-Bug */
+    border: 4px solid #8CACD3;
+    border-radius: 2px;
+    background-color: #8CACD3;
+    width: 240px;
+    padding: 3px;
+    padding-bottom: 2px;
+    position: static;
+}
+
+/*
+ MenueHistorie
+*/
+
+.menueHistorie {
+    display: none;
+    clear: both;
+    padding-bottom: 4px;
+    float: left;
+    width: 240px;
+    padding: 3px;
+    padding-bottom: 2px;
+    position: fixed;
+    top: 50px;
+}
+
+
+.menueTopDummy {
+    height: 0px;
+    width: 100%;
+}
+
+/*
+########################
+# Loading
+########################
+*/
+.box-loading {
+    width: 230px;
+}
+/*
+########################
+## Basis Box: Detailseite
+########################
+*/
+.boxlinearea-name {
+    width: 100%;
+}
+
+.boxlinearea-todoicons {
+    display: none;
+}
+
+.boxline .label {
+    width: 50%;
+}
+
+.boxline .value {
+    width: 50%;
+}
+
+.innerline-label {
+    width: 50%;
+}
+
+.innerline .label {
+    width: 50%;
+}
+
+.innerline-value {
+    width: 50%;
+}
+
+.innerline .value {
+    width: 50%;
+}
+
+
+/*
+########################
+## Basis Box: Listenseite
+########################
+*/
+.boxline-list {
+    width: 230px;
+}
+
+/*
+########################
+##
+## Seite Images
+##
+########################
+*/
+
+/*
+########################
+## Seite Images: Ergebnisliste
+########################
+*/
+.boxline-list-image {
+    width: 230px;
+}
+
+.listentry-column-image {
+    width: 45%;
+}
+
+.listentry-column-image-2 {
+    width: 100%;
+}
+
+.listentry-column-image-3 {
+    width: 100%;
+}
+
+.listentry-column-image-4 {
+    width: 33%;
+}
+
+/*
+########################
+##
+## Page
+##
+########################
+*/
+.pageHead {
+    width: 250px;
+}
+
+.pageContent {
+    width: 250px;
+}
+
+.pageContentPopup {
+    width: 240px;
+}
+
+.blockContent {
+    width: 240px;
+}
+
+/*
+########################
+##
+## Content
+##
+########################
+*/
+.content {
+    width: 230px;
+}
+
+/*
+########################
+## Image-List
+########################
+*/
+.imageListEntry {
+    width: 45%;
+}
+
+/*
+########################
+## Diashow-Box
+########################
+*/
+.diashow {
+    width: 240px;
+}
+
+
+/*
+########################
+## Footer-Menue
+########################
+*/
+.menueFooter {
+    width: 240px;
+}
+ul.ulMenueFooter li {
+    font-size: 0px;
+}
+.a-menue-footer-norm {
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 0px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.a-menue-footer-norm-js {
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 0px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+

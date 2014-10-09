@@ -1,0 +1,97 @@
+/**
+ * <h4>FeatureDomain:</h4>
+ *     WebApp
+ *
+ * <h4>FeatureDescription:</h4>
+ *     Teil der MatWeb-Framework Demo-Anwendung<br>
+ *     Demo-Styles fuer die Desktop-Version (Grund-Layout)
+ * 
+ * @author Michael Schreiner <ich@michas-ausflugstipps.de>
+ * @category MatWeb-WebAppFramework-Demo
+ * @copyright Copyright (c) 2013, Michael Schreiner
+ * @license http://mozilla.org/MPL/2.0/ Mozilla Public License 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+
+/*
+########################
+##
+## Base
+##
+########################
+*/
+.syntaxhighlighter .line {
+}
+.syntaxhighlighter {
+}
+.syntaxhighlighter table td.code .container {
+    overflow: auto;
+    overflow-y: auto;
+    width: 540px !important;
+}
+
+.pageContent {
+    width: 890px;
+}
+.blockContent {
+    width: 732px;
+}
+.content {
+    width: 712px;
+}
+
+.container-demo-result {
+   clear: all;
+   float: left;
+   background: black;
+   padding: 20 30 20 20;
+   width: 580px;
+}
+
+
+
+.h1-portdesc {
+    
+}
+.h2-portdesc {
+}
+.h3-portdesc {
+    margin-left: 10px;
+    border-top: 1px dotted green; 
+    padding-top: 5px;
+}
+.h4-portdesc {
+    margin-left: 20px;
+    border-top: 1px dotted green; 
+    padding-top: 5px;
+}
+.h5-portdesc {
+    margin-left: 30px;
+}
+.p-portdesc {
+    margin-left: 20px;
+}
+.p-portdesc-ue {
+    display: inline-block;
+    width: 120px;
+}
+.p-portdesc-desc {
+    display: inline-block;
+    width: 540px;
+    vertical-align: top;
+}
+.li-portdesc {
+    margin-left: 30px;
+}
+.li-portdesc-ue {
+    display: inline-block;
+    width: 100px;
+}
+.li-portdesc-desc {
+    display: inline-block;
+    width: 500px;
+    vertical-align: top;
+}

@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-15"/>
+    <title>Demo der JMSGeoMap-Blibliotheken</title>
+    <meta http-equiv="Keywords" name="Keywords" content="Michael Schreiner,JMSGeoMap,Demo" />
+    <meta http-equiv="Description" name="Description" content="Demo der JMSGeoMap-Blibliotheken" />
+    <meta name="Expires" content="now" />
+    <meta NAME="Keywords" content="Michael Schreiner,JMSGeoMap,Demo" />
+    <meta NAME="Description" content="Demo der JMSGeoMap-Blibliotheken" />
+    <meta NAME="author" CONTENT="P-Micha" />
+    <meta NAME="page-topic" CONTENT="Homepage" />
+    <meta NAME="page-type" CONTENT="Information" />
+    <meta NAME="audience" CONTENT="Alle" />
+    <meta NAME="robots" CONTENT="INDEX,FOLLOW" />
+    <meta NAME="resource-type" CONTENT="document" />
+    <meta NAME="distribution" CONTENT="global" />
+    <meta NAME="Content-Language" CONTENT="de" />
+
+<script type="text/javascript">var flgDetailFrameAllowed = true</script>
+
+<!-- APIs fuer Maps -->
+<script type="text/javascript" src="../OpenLayers-2.11.js"></script>
+<script type="text/javascript" src="../OpenStreetMap.js"></script>
+<script type="text/javascript" src="http://www.openstreetmap.org/openlayers/OpenStreetMap.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.5&amp;sensor=false"></script>
+<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2&amp;mkt=en-us"></script>
+
+<!-- APIs fuer JMSGeoMap -->
+<script type="text/javascript" src="./JMSBase.js?DUMMY=20130105"></script>
+<script type="text/javascript" src="./JMSGeo.js?DUMMY=20130105"></script>
+<script type="text/javascript" src="./JMSGeoMap.js?DUMMY=20130105"></script>
+<script type="text/javascript" src="./JMSGeoMapBingMap.js?DUMMY=20130105"></script>
+<script type="text/javascript" src="./JMSGeoMapExtensions.js?DUMMY=20130105"></script>
+<script type="text/javascript" src="./JMSGeoMapGMap.js?DUMMY=20130105"></script>
+<script type="text/javascript" src="./JMSGeoMapOpenLayer.js?DUMMY=20130105"></script>
+<script type="text/javascript" src="./JMSGeoProfile.js?DUMMY=20130105"></script>
+<script type="text/javascript" src="../jmat/JMATBase.js"></script>
+
+<!-- Charts -->
+<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="../../jqplot/excanvas.js"></script><![endif]-->
+<script type="text/javascript" src="http://michas-ausflugstipps.de/jqplot/jquery.min.js"></script>
+<script type="text/javascript" src="http://michas-ausflugstipps.de/jqplot/jquery.jqplot.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://michas-ausflugstipps.de/jqplot/jquery.jqplot.css" />
+<script type="text/javascript" src="../../jqplot/jquery.min.js"></script>
+<script type="text/javascript" src="../../jqplot/jquery.jqplot.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../jqplot/jquery.jqplot.css" />
+
+<style type="text/css">
+/* Default-Styles */
+
+v\:* {
+  behavior:url(#default#VML);
+}
+html,body {
+  background-color: #000000;
+  height: 100%;
+  width: 100%;
+  font-family: Helvetica,Arial,sans-serif;
+  overflow: hidden;
+  color: white;
+}
+
+.olControlAttribution {
+font-size: smaller;
+right: 3px;
+top: 1000px;
+color: #000000;
+}
+
+/* JMSGeoMap-Styles */
+.olPanelJMSGeoMapFeatures {
+    left: auto;
+    right: 8px;
+    top: auto;
+    bottom: 8px;
+}
+.olPanelJMSGeoMapFeatures div {
+    width:  60px;
+    height: 20px;
+}
+div.PanelButtonJMSGeoMapFeaturesTourItemInactive {
+    background-image: url("http://www.michas-ausflugstipps.de/images/bt_base_tour_aktiv.gif");
+}
+div.PanelButtonJMSGeoMapFeaturesTourItemActive {
+    background-image: url("http://www.michas-ausflugstipps.de/images/bt_base_tour_inaktiv.gif");
+}
+div.PanelButtonJMSGeoMapFeaturesImageItemInactive {
+    background-image: url("http://www.michas-ausflugstipps.de/images/bt_base_image_aktiv.gif");
+}
+div.PanelButtonJMSGeoMapFeaturesImageItemActive {
+    background-image: url("http://www.michas-ausflugstipps.de/images/bt_base_image_inaktiv.gif");
+}
+div.PanelButtonJMSGeoMapFeaturesTrackItemInactive {
+    background-image: url("http://www.michas-ausflugstipps.de/images/bt_base_track_aktiv.gif");
+}
+div.PanelButtonJMSGeoMapFeaturesTrackItemActive {
+    background-image: url("http://www.michas-ausflugstipps.de/images/bt_base_track_inaktiv.gif");
+}
+div.PanelButtonJMSGeoMapFeaturesLocationItemInactive {
+    background-image: url("http://www.michas-ausflugstipps.de/images/bt_base_location_aktiv.gif");
+}
+div.PanelButtonJMSGeoMapFeaturesLocationItemActive {
+    background-image: url("http://www.michas-ausflugstipps.de/images/bt_base_location_inaktiv.gif");
+}
+div.PanelButtonFullScreenItemInactive {
+    background-image: url("http://www.michas-ausflugstipps.de/images/bt_base_fullscreen_aktiv.gif");
+}
+div.PanelButtonFullScreenItemActive {
+    background-image: url("http://www.michas-ausflugstipps.de/images/bt_base_fullscreen_aktiv.gif");
+}
+div.PanelButtonOsmSearchItemActive {
+    background-image: url("http://www.michas-ausflugstipps.de/images/bt_base_osmsearch_aktiv.gif");
+}
+div.PanelButtonOsmSearchItemInactive {
+    background-image: url("http://www.michas-ausflugstipps.de/images/bt_base_osmsearch_aktiv.gif");
+}
+div.osm_search {
+    font-size: 9px;
+}
+div.osm_search_title {
+    font-size: 9px;
+}
+div.osm_search_content {
+    font-size: 9px;
+}
+a.osm_search {
+    font-size: 9px;
+}
+a.osm_search_title {
+    font-size: 9px;
+}
+a.osm_search_content {
+    font-size: 9px;
+}
+</style>
+
+<script type="text/javascript">
+jMATLogger = jMATService.initLogger("DEBUG");
+</script>
+
+
+<script type="text/javascript">
+/*  */
+/* globale Variablen + Configs */
+/*  */
+
+// konfigurieren, welche Daten geladen werden
+var myUrl = this.location + "";
+var pos = myUrl.search("TRACK="); 
+var urlGPX = "./tracks.xml";
+if (pos > 0) {
+    urlGPX = myUrl.substring(pos+6, myUrl.length);
+    urlGPX = urlGPX.replace(/&/g, "_"); 
+    urlGPX = urlGPX.replace(/\\/g, "_"); 
+    urlGPX = urlGPX.replace(/:/g, "_"); 
+    urlGPX = urlGPX.replace(/\//g, "_"); 
+    urlGPX = "../../tracks/" + urlGPX;
+}
+
+// Variable fuer Auschnitt
+var viewRectangle;
+var mapMP = null;
+var htmlMapObjImp = null;
+
+// Configs
+var flagGPX = 0; // 0 kein GPX laden; 1 nur Waypoints laden, 2 auch Touren ladden
+var mapType = 0; // 0 OpenstreetMap, 1 GogleMaps 2, 2 Google Maps 3, 4 Bing V7
+ 
+// Kartenmitte
+var pos = new JMSGeoLatLon(49.32667, 11.02);
+
+// Zoom-Level
+var zoom = 10;
+var globOptions = {
+    supressLoadingOnMoveEnd: 0,
+    supressImageLoading: 0,
+    supressTourLoading: 0,
+    supressTrackLoading: 0,
+    supressLocationLoading: 0,
+    MAPOPTIONS_OPENLAYERS: {
+    }
+};
+
+// map-Variablen
+var mapMP = null;
+var map = null;
+
+// FullScreenUrl konfigurieren
+globOptions.fullScreenFuncRef = function(fullMap) {
+    openFullScreenMap();
+};
+
+
+function onLoad() {
+    // JMSGeoProfileObj anlegen
+    var msChartObj = new JMSGeoProfile('chartdiv');
+    
+    // Chart laden
+    var statusInfoText = "Lade Daten vom Server";
+    var mpChartGPXLoad = new JMSGeoMapGPXLoad(msChartObj, "mplayer", urlGPX, statusInfoText);
+    mpChartGPXLoad.load();
+    
+    // Map-Div auf Seitengroesse vergeossern
+    var mapDivName = "mapDiv";
+    var mapDiv = document.getElementById(mapDivName);
+    
+    // je nach MapType anderer Konstruktor
+    if (mapType == 1) {
+        // GMap2
+        mapMP = new JMSGeoMapGMap2(mapDivName, globOptions);
+    } else if (mapType == 2) {
+        // GMap3
+        mapMP = new JMSGeoMapGMap3(mapDivName, globOptions);
+    } else if (mapType == 3) {
+        // Bing
+        mapMP = new JMSGeoMapBingMap(mapDivName, globOptions);
+    } else {
+        // Openstreetmap
+        mapMP = new JMSGeoMapOpenLayer(mapDivName, globOptions);
+    }
+
+    // Karte anlegen
+    mapMP.createMapObj();
+    htmlMapObjImp = mapMP.getMapObj();
+
+    // Defaultlayer einbinden 
+    mapMP.addDefaultLayer();
+    
+    // OsmOrts-Suche einbinden
+    mapMP.addOsmLocSearch('mapMP');
+    
+    // Default-Controls einbimdem
+    mapMP.addDefaultControls();
+    
+    // Mittelpunkt setzen
+    mapMP.setCenter(pos, zoom);
+    
+    // Ring setzen
+    mapMP.setViewRectangle("mplayer", 0.35, 0.35);
+    
+    // MP-Controls hinzufuegen (Features ein/ausblenden, Ortsuche, FullScreen)
+    mapMP.addJMSGeoMapFeatureControls();
+
+    // Grunddaten per GPX laden (funcktioniert nur, wenn die Dateien von der gleichen Domain kommen wg. OSRI)
+    if (urlGPX) {
+        var mpGPXLoad = new JMSGeoMapGPXLoad(mapMP, "mplayer", urlGPX, statusInfoText);
+        mpGPXLoad.load();
+    }
+
+    map = mapMP;
+
+    // Rest (Tracks, Bilder f�r Umgebung nachladen 
+    // [Script liefert JSCode zur�ck, der sofort ausgef�hrt wird -> funktioniert nur, wenn Script auf gleicher Domain l�uft wg. OSRI]
+    var showLoadInfo = 1;
+    var statusInfoText = "";
+    if (showLoadInfo) {
+        statusInfoText = "Lade Touren-Daten vom Server. Das kann dauern ;-)";
+    }
+    var center = mapMP.getCenter();
+
+    // Eventhandler installieren (Nachladen bei Positionswechsel)
+    mapMP.registerMapEvent('moveend',
+        function() {
+            onMoveEnd();
+        }
+    );
+
+    // Um Feature zentrieren
+    var delayedCenter = window.setInterval(
+            function() {
+                // nach 2 Sekunden ausfuehren und Intervall loeschen
+                window.clearInterval(delayedCenter);
+
+                // zentrieren
+                var mpFeatureObj = null;
+                var tmpHash = mapMP.hshFeature["TOUR"];
+                if (tmpHash) {
+                    for (var i in tmpHash) {
+                        mpFeatureObj = tmpHash[i];
+                        if (! mapMP.isEmpty(mpFeatureObj) && mpFeatureObj) {
+                            mpFeatureObj.centerMapOnFeature(mapMP, 14, 1);
+                        }
+                    }
+                }
+                
+                // Tourdaten ausgeben
+                data = "Asc:" + mpFeatureObj.metaAsc + "m"
+                   + " Desc:" + mpFeatureObj.metaDesc + "m" 
+                   + " Dist:" + mpFeatureObj.metaDist + "km"
+                   + " Min:" + mpFeatureObj.getBoundsJMSGeoLatLon()[0].flEle + "m"
+                   + " Max:" + mpFeatureObj.getBoundsJMSGeoLatLon()[1].flEle + "m"
+                ;
+                //document.getElementById("data").innerHTML = data;
+                document.getElementById("data_asc").innerHTML = mpFeatureObj.metaAsc;
+                document.getElementById("data_desc").innerHTML = mpFeatureObj.metaDesc;
+                document.getElementById("data_dist").innerHTML = mpFeatureObj.metaDist;
+                document.getElementById("data_min").innerHTML = mpFeatureObj.getBoundsJMSGeoLatLon()[0].flEle;
+                document.getElementById("data_max").innerHTML = mpFeatureObj.getBoundsJMSGeoLatLon()[1].flEle;
+            }, 2000);
+}
+
+function openFullScreenMap() {
+    // Fullscreen-Fenster oeffnen
+    var width = screen.availWidth;
+    var height = screen.availHeight;
+    var optionStr = "height=" + height + ",width=" + width + ",resizable=yes,scrollbars=no";
+    var url = document.location;
+    window.open(url, 'fullscreen', optionStr);
+}
+
+function onMoveEnd() {
+    // Eventhandler: hier kann Javascript-Code fuer neue Center-Koordinaten nachgeladen werden
+    // (hier k�nnen dann z.B. neue Track usw. eingblendet werden)
+    var center = mapMP.getCenter();
+    if (mapMP.getConfig()['supressLoadingOnMoveEnd'] != 1) {
+        mapMP.setViewRectangle("mplayer", 0.35, 0.35);
+    }
+}
+
+function unLoad() {
+  mapMP = null;
+}
+//]]>
+</script>
+</head>
+       <body bgcolor="#C1D2EC" link="#107AD1" onload="onLoad();" onunload="unLoad();">
+       <div id="mapDiv" style="width: 600px; height: 400px"></div>
+       <br clear="all">
+       <div id="data">
+           Asc:<span id="data_asc"></span> Hm
+           Desc:<span id="data_desc"></span> Hm
+           Dist:<span id="data_dist"></span> km
+           Min:<span id="data_min"></span> m
+           Max:<span id="data_max"></span> m
+       </div>
+       <br clear="all">
+       <div id="chartdiv" style="height:200px;width:600px; "></div> 
+   </body>
+ </html>

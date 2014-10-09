@@ -1,0 +1,116 @@
+/**
+ * <h4>FeatureDomain:</h4>
+ *     WebApp
+ *
+ * <h4>FeatureDescription:</h4>
+ *     Teil der MatWeb-Framework Demo-Anwendung<br>
+ *     Differenz-Styles fuer die Non-Desktop-Version (Tablet, Smartphone...)
+ * 
+ * @author Michael Schreiner <ich@michas-ausflugstipps.de>
+ * @category MatWeb-WebAppFramework-Demo
+ * @copyright Copyright (c) 2013, Michael Schreiner
+ * @license http://mozilla.org/MPL/2.0/ Mozilla Public License 2.0
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+
+/*
+########################
+## Basis: Defaults
+########################
+*/
+body {
+    margin: 0px;
+}
+
+/*
+########################
+##
+## Base
+##
+########################
+*/
+.box-toc {
+   position: static;
+}
+.box-hint4bigwindowdetailframe {
+   display: none;
+}
+.blockMenue {
+   display: none;
+   background-color: #8CACD3;
+   position: fixed;
+}
+.menueNavLogo {
+    height: 0px;
+    display: none;
+}
+.blockSupport {
+   display: none;
+   background-color: #8CACD3;
+   position: fixed;
+}
+.page-div-center {
+}
+.pageContent {
+   width: 600px;
+}
+.blockContent {
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+
+/* Device ist Desktop-Rechner */
+.display-if-device-desktop-block {
+    display: none;
+}
+
+.display-if-device-desktop-inline {
+    display: none;
+}
+
+/* Device ist NonDesktop-Rechner (Mobile. Pad...) */
+.display-if-device-nondesktop-block {
+    display: block;
+}
+
+.display-if-device-nondesktop-inline {
+    display: inline;
+}
+
+/* Aktive Version (Desktop, Mobile) */
+.display-if-activeversion-desktop-block {
+    display: none;
+}
+
+.display-if-activeversion-desktop-inline {
+    display: none;
+}
+
+.display-if-activeversion-mobile-block {
+    display: block;
+}
+
+.display-if-activeversion-mobile-inline {
+    display: inline
+}
+
+
+
+.menueTopDummy {
+    height: 0px; 
+    width: 100%;
+}
+ul.ulMenueTop li {
+    list-style: none;
+    float: left;
+    margin: 1px;
+    padding-left: 1px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 1px;
+    font-size: 14px;
+}

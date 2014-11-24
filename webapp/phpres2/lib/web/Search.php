@@ -1634,7 +1634,7 @@ class Search {
           $sql = $this->createSql4KeywordCsv($fieldName, $valueList, 
                   $operator, $not, $addFieldNames);
           $this->addFilter($paramName, "($sql)", 
-                  $this->getUrlParamStr($paramName, $value));
+                  $this->getUrlParamStr($paramName, $value), false);
 
           // Joins ?
           if ((isset($joinName)) && (isset($join)) && (isset($table))) {
@@ -1778,7 +1778,7 @@ class Search {
                   $addFieldNames);
 
           $this->addFilter($paramName, "($sql)", 
-                  $this->getUrlParamStr($paramName, $value));
+                  $this->getUrlParamStr($paramName, $value), false);
           if ((isset($joinName)) && (isset($join)) && (isset($table))) {
                 $this->addFilter($joinName, $join, "");
               $this->addTable($table);
@@ -1827,7 +1827,7 @@ class Search {
                  . $this->dbConn->sqlSafeString("%,$valueListValue,%");
           }
           $this->addFilter($paramName, "($sql)", 
-                  $this->getUrlParamStr($paramName, $value));
+                  $this->getUrlParamStr($paramName, $value), false);
           if ((isset($joinName)) && (isset($join)) && (isset($table))) {
                 $this->addFilter($joinName, $join, "");
               $this->addTable($table);
@@ -1883,7 +1883,7 @@ class Search {
           if (count($valueList) > 0) {
              $this->addFilter($paramName, 
                      $this->dbConn->sqlFilterIn($fieldName, $valueList), 
-                     "$valueStr", 0);
+                     "$valueStr", false);
              if ((isset($joinName)) && (isset($join)) && (isset($table))) {
                  $this->addFilter($joinName, $join, "");
                  $this->addTable($table);
@@ -1924,7 +1924,7 @@ class Search {
           $valueList = explode (',', $value);
           $this->addFilter($paramName, 
                   $this->dbConn->sqlFilterNotIn($fieldName, $valueList), 
-                  $this->getUrlParamStr($paramName, $value));
+                  $this->getUrlParamStr($paramName, $value), false);
           if ((isset($joinName)) && (isset($join)) && (isset($table))) {
               $this->addFilter($joinName, $join, "");
               $this->addTable($table);
@@ -1962,7 +1962,7 @@ class Search {
           $valueList[] = $value;
           $this->addFilter($paramName, 
                   $this->dbConn->sqlFilterIn($fieldName, $valueList), 
-                  $this->getUrlParamStr($paramName, $value));
+                  $this->getUrlParamStr($paramName, $value), false);
           if ((isset($joinName)) && (isset($join)) && (isset($table))) {
               $this->addFilter($joinName, $join, "");
               $this->addTable($table);
@@ -2000,7 +2000,7 @@ class Search {
           $value = $params[$paramName];
           $this->addFilter($paramName, 
                   $this->dbConn->sqlFilterLE($fieldName, $value), 
-                  $this->getUrlParamStr($paramName, $value));
+                  $this->getUrlParamStr($paramName, $value), false);
           if ((isset($joinName)) && (isset($join)) && (isset($table))) {
               $this->addFilter($joinName, $join, "");
               $this->addTable($table);
@@ -2037,7 +2037,7 @@ class Search {
           $value = $params[$paramName];
           $this->addFilter($paramName, 
                   $this->dbConn->sqlFilterLIKE($fieldName, $value .  "%"), 
-                  $this->getUrlParamStr($paramName, $value));
+                  $this->getUrlParamStr($paramName, $value), false);
           if ((isset($joinName)) && (isset($join)) && (isset($table))) {
               $this->addFilter($joinName, $join, "");
               $this->addTable($table);
@@ -2074,7 +2074,7 @@ class Search {
           $value = $params[$paramName];
           $this->addFilter($paramName, 
                   $this->dbConn->sqlFilterLIKE($fieldName, "%" . $value .  "%"), 
-                  $this->getUrlParamStr($paramName, $value));
+                  $this->getUrlParamStr($paramName, $value), false);
           if ((isset($joinName)) && (isset($join)) && (isset($table))) {
               $this->addFilter($joinName, $join, "");
               $this->addTable($table);
@@ -2111,7 +2111,7 @@ class Search {
           $value = $params[$paramName];
           $this->addFilter($paramName, 
                   $this->dbConn->sqlFilterGE($fieldName, $value), 
-                  $this->getUrlParamStr($paramName, $value));
+                  $this->getUrlParamStr($paramName, $value), false);
           if ((isset($joinName)) && (isset($join)) && (isset($table))) {
               $this->addFilter($joinName, $join, "");
               $this->addTable($table);
@@ -2148,7 +2148,7 @@ class Search {
           $value = $params[$paramName];
           $this->addFilter($paramName, 
                   $this->dbConn->sqlFilterIsNotNull($fieldName), 
-                  $this->getUrlParamStr($paramName, $value));
+                  $this->getUrlParamStr($paramName, $value), false);
           if ((isset($joinName)) && (isset($join)) && (isset($table))) {
               $this->addFilter($joinName, $join, "");
               $this->addTable($table);
@@ -2185,7 +2185,7 @@ class Search {
           $value = $params[$paramName];
           $this->addFilter($paramName, 
                   $this->dbConn->sqlDateFilterLE($fieldName, $value), 
-                  $this->getUrlParamStr($paramName, $value));
+                  $this->getUrlParamStr($paramName, $value), false);
           if ((isset($joinName)) && (isset($join)) && (isset($table))) {
               $this->addFilter($joinName, $join, "");
               $this->addTable($table);
@@ -2223,7 +2223,7 @@ class Search {
           $value = $params[$paramName];
           $this->addFilter($paramName, 
                   $this->dbConn->sqlDateFilterGE($fieldName, $value), 
-                  $this->getUrlParamStr($paramName, $value));
+                  $this->getUrlParamStr($paramName, $value), false);
           if ((isset($joinName)) && (isset($join)) && (isset($table))) {
               $this->addFilter($joinName, $join, "");
               $this->addTable($table);
@@ -2275,7 +2275,7 @@ class Search {
 
        if (isset($params[$paramName]) && $params[$paramName]) {
           $value = $params[$paramName];
-          $this->addFilter($paramName, $this->dbConn->sqlIntFilterBereich($fieldName, $value, $zoom, $zoom), $this->getUrlParamStr($paramName, $value));
+          $this->addFilter($paramName, $this->dbConn->sqlIntFilterBereich($fieldName, $value, $zoom, $zoom), $this->getUrlParamStr($paramName, $value), false);
           if ((isset($joinName)) && (isset($join)) && (isset($table))) {
                 $this->addFilter($joinName, $join, "");
               $this->addTable($table);
@@ -2353,7 +2353,7 @@ class Search {
           $lonValue = preg_replace('/[^-+0-9,.]/', '', $tmp[1]);
           $filter = "(" . $this->dbConn->sqlIntFilterBereich($fieldNameLon, $lonValue, $lonZoom, $lonZoom)
                     . " and " . $this->dbConn->sqlIntFilterBereich($fieldNameLat, $latValue, $latZoom, $latZoom) . ")";
-          $this->addFilter($paramName, $filter, $this->getUrlParamStr($paramName, $value));
+          $this->addFilter($paramName, $filter, $this->getUrlParamStr($paramName, $value), false);
           if ((isset($joinName)) && (isset($join)) && (isset($table))) {
                 $this->addFilter($joinName, $join, "");
               $this->addTable($table);
@@ -2461,7 +2461,7 @@ class Search {
                       . " or (dayofyear($fieldName) >= $dayOfYearMin2" 
                       .     " and dayofyear($fieldName) <= $dayOfYearMax2))";
           }
-          $this->addFilter($paramName, $filter, $this->getUrlParamStr($paramName, $value));
+          $this->addFilter($paramName, $filter, $this->getUrlParamStr($paramName, $value), false);
           if ((isset($joinName)) && (isset($join)) && (isset($table))) {
              $this->addFilter($joinName, $join, "");
              $this->addTable($table);
@@ -2588,7 +2588,7 @@ class Search {
           $sort = 1;
           $this->addSort($paramName, 
                   $sqlSort, 
-                  $this->getUrlParamStr($paramName, $value));
+                  $this->getUrlParamStr($paramName, $value), false);
           if ((isset($joinName)) && (isset($join)) && (isset($table))) {
                 $this->addFilter($joinName, $join, "");
               $this->addTable($table);
